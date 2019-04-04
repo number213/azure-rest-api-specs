@@ -23,7 +23,6 @@ To see additional help and options, run:
 ### Basic Information
 
 These are the global settings for the Network API.
-Temp text to test CI
 
 ``` yaml
 title: NetworkManagementClient
