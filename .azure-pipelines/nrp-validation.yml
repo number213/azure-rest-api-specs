@@ -8,6 +8,9 @@ pr:
   branches:
     include:
       - network-*
+  paths:
+    include:
+    - specification/network/*
 
 pool:
   vmImage: 'vs2017-win2016'
