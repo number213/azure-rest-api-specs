@@ -24,7 +24,8 @@ steps:
       Write-Host "SOURCE: " + $env:System_PullRequest_SourceBranch
       Write-Host "URI: " + $env:System_PullRequest_SourceRepositoryURI
     displayName: PS check
-  - script: "C:/Program Files (x86)/Microsoft SDKs/Windows/v10.0A/bin/NETFX 4.6.1 Tools/sn.exe" -Vr *,31bf3856ad364e35
+  - powershell: |
+      & "C:/Program Files (x86)/Microsoft SDKs/Windows/v10.0A/bin/NETFX 4.6.1 Tools/sn.exe" -Vr *,31bf3856ad364e35
     displayName: Bypass Strong Name validation
   - task: NodeTool@0
     inputs:
