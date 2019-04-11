@@ -1,47 +1,53 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger: none
+
+# condition: and(startsWith(variables['System.PullRequest.TargetBranch'], 'network-'), endsWith(variables['System.PullRequest.TargetBranch'], '-release'))
 pr:
   branches:
     include:
       - network-*
-  paths:
-    include:
-    - specification/network/*
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: vs2017-win2016
+
+variables:
+  NRP_SWAGGER_VALIDATION_OVERRIDE_PS_BRANCH: 'true'
+  NRP_BUILD_TOOLS_SKIP_GENERATE_PS1: 'true'
 
 steps:
+  - script: |
+      echo TARGET: $(System.PullRequest.TargetBranch)
+      echo SOURCE: $(System.PullRequest.SourceBranch)
+      echo URI: $(System.PullRequest.SourceRepositoryURI)
+    displayName: Echo
   - powershell: |
-      & "C:/Program Files (x86)/Microsoft SDKs/Windows/v10.0A/bin/NETFX 4.6.1 Tools/sn.exe" -Vr *,31bf3856ad364e35
-    displayName: "Bypass Strong Name validation"
+      Write-Host "TARGET: " + $env:System_PullRequest_TargetBranch
+      Write-Host "SOURCE: " + $env:System_PullRequest_SourceBranch
+      Write-Host "URI: " + $env:System_PullRequest_SourceRepositoryURI
+    displayName: PS check
+  - script: "C:/Program Files (x86)/Microsoft SDKs/Windows/v10.0A/bin/NETFX 4.6.1 Tools/sn.exe" -Vr *,31bf3856ad364e35
+    displayName: Bypass Strong Name validation
   - task: NodeTool@0
     inputs:
-      versionSpec: '10.x'
-  - powershell: |
-      & "npm" install autorest -g
-    displayName: "Install autorest"
+      versionSpec: 10.x
+    displayName: Install Node.js
+  - script: npm install autorest -g
+    displayName: Install autorest
   - script: git clone --depth 1 -- https://dev.azure.com/v-anevse/BuildScripts/_git/BuildScripts ..\BuildScripts
-    displayName: 'Clone build tools'
+    displayName: Clone build tools
   - powershell: |
-      $env:NRP_BUILD_TOOLS_SKIP_GENERATE_PS1 = $true
       $swgrPath = (Get-Item ".\").FullName
       ..\BuildScripts\Test-SwaggerRelease.ps1 -Component Network -SwaggerRepoPath $swgrPath -OutputFolder .\Out
     failOnStderr: false
-    displayName: 'Test Swagger Updates'
+    displayName: Test Swagger updates
   - powershell: |
       $outputPath = ".\Out"
       if(-not (Test-Path $outputPath)) { New-Item -Path $outputPath -ItemType "Directory" -Force }
       Copy-Item "..\BuildScripts\.azure-pipelines\.artifactignore" -Destination "${outputPath}\.artifactignore" -Force -ErrorAction "SilentlyContinue"
     failOnStderr: false
     condition: always()
-    displayName: 'Copy .artifactignore'
+    displayName: Copy .artifactignore
   - task: PublishPipelineArtifact@0
     condition: always()
     inputs:
-      artifactName: 'SwaggerTestOutput'
-      targetPath: '.\Out'
+      artifactName: SwaggerTestOutput
+      targetPath: .\Out
