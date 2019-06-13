@@ -945,6 +945,12 @@ directive:
     from: applicationSecurityGroup.json
     reason: name, id and type properties are inherited from the upper level
   - suppress: RequiredPropertiesMissingInResourceModel
+    from: autoApprovedPrivateLinkServices.json
+    reason: name, id and type properties are inherited from the upper level
+  - suppress: RequiredPropertiesMissingInResourceModel
+    from: availablePrivateEndpointTypes.json
+    reason: name, id and type properties are inherited from the upper level
+  - suppress: RequiredPropertiesMissingInResourceModel
     from: azureFirewall.json
     reason: name, id and type properties are inherited from the upper level
   - suppress: RequiredPropertiesMissingInResourceModel
@@ -955,6 +961,9 @@ directive:
     reason: name, id and type properties are inherited from the upper level
   - suppress: RequiredPropertiesMissingInResourceModel
     from: checkDnsAvailability.json
+    reason: name, id and type properties are inherited from the upper level
+  - suppress: RequiredPropertiesMissingInResourceModel
+    from: checkPrivateLinkServiceVisibility.json
     reason: name, id and type properties are inherited from the upper level
   - suppress: RequiredPropertiesMissingInResourceModel
     from: ddosCustomPolicy.json
