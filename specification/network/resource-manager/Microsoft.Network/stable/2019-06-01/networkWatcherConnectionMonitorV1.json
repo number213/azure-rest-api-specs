@@ -73,10 +73,10 @@
             "description": "Parameters that define the operation to create a connection monitor."
           },
           {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           }
         ],
         "responses": {
@@ -138,10 +138,10 @@
             "description": "The name of the connection monitor."
           },
           {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           }
         ],
         "responses": {
@@ -193,10 +193,10 @@
             "description": "The name of the connection monitor."
           },
           {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           }
         ],
         "responses": {
@@ -261,10 +261,10 @@
             "description": "Parameters supplied to update connection monitor tags."
           },
           {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           }
         ],
         "responses": {
@@ -318,10 +318,10 @@
             "description": "The name of the connection monitor."
           },
           {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           }
         ],
         "responses": {
@@ -379,10 +379,10 @@
             "description": "The name of the connection monitor."
           },
           {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           }
         ],
         "responses": {
@@ -440,10 +440,10 @@
             "description": "The name given to the connection monitor."
           },
           {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           }
         ],
         "responses": {
@@ -500,10 +500,10 @@
             "description": "The name of the Network Watcher resource."
           },
           {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           }
         ],
         "responses": {
