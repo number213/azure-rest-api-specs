@@ -1672,16 +1672,11 @@
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/VirtualNetworkPropertiesFormat",
           "description": "Properties of the virtual network."
-        },
-        "etag": {
-          "type": "string",
-          "readOnly": true,
-          "description": "A unique read-only string that changes whenever the resource is updated."
         }
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/Resource"
+          "$ref": "./network.json#/definitions/TopLevelResource"
         }
       ],
       "description": "Virtual Network resource."
@@ -1845,16 +1840,9 @@
       "description": "Details of NetworkIntentPolicyConfiguration for PrepareNetworkPoliciesRequest."
     },
     "NetworkIntentPolicy": {
-      "properties": {
-        "etag": {
-          "type": "string",
-          "readOnly": true,
-          "description": "A unique read-only string that changes whenever the resource is updated."
-        }
-      },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/Resource"
+          "$ref": "./network.json#/definitions/TopLevelResource"
         }
       ],
       "description": "Network Intent Policy resource."
