@@ -69,20 +69,6 @@
     },
     "Resource": {
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "Resource ID."
-        },
-        "name": {
-          "readOnly": true,
-          "type": "string",
-          "description": "Resource name."
-        },
-        "type": {
-          "readOnly": true,
-          "type": "string",
-          "description": "Resource type."
-        },
         "location": {
           "type": "string",
           "description": "Resource location."
@@ -95,8 +81,15 @@
           "description": "Resource tags."
         }
       },
-      "description": "Common resource representation.",
-      "x-ms-azure-resource": true
+      "required": [
+        "location"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/ResourceChild"
+        }
+      ],
+      "description": "Common resource representation."
     },
     "ResourceChild": {
       "properties": {
