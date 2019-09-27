@@ -1681,7 +1681,7 @@
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/Resource"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
         }
       ],
       "description": "Virtual Network resource."
@@ -1854,7 +1854,7 @@
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/Resource"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
         }
       ],
       "description": "Network Intent Policy resource."
