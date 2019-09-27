@@ -83,6 +83,11 @@
           "type": "string",
           "description": "Resource type."
         },
+        "etag": {
+          "type": "string",
+          "readOnly": true,
+          "description": "A unique read-only string that changes whenever the resource is updated."
+        },
         "location": {
           "type": "string",
           "description": "Resource location."
