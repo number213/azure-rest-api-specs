@@ -98,15 +98,49 @@
       "description": "Common resource representation.",
       "x-ms-azure-resource": true
     },
-    "SubResource": {
+    "ResourceChild": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the resource."
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Fully qualified resource Id for the resource."
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The type of the resource."
+        },
+        "etag": {
+          "type": "string",
+          "readOnly": true,
+          "description": "A unique read-only string that changes whenever the resource is updated."
+        }
+      },
+      "description": "Common child resource representation.",
+      "x-ms-azure-resource": true
+    },
+    "ResourceProperties": {
+      "properties": {
+        "provisioningState": {
+          "readOnly": true,
+          "$ref": "#/definitions/ProvisioningState",
+          "description": "The provisioning state of the resource."
+        }
+      },
+      "description": ""
+    },
+    "ResourceId": {
       "properties": {
         "id": {
           "type": "string",
           "description": "Resource ID."
         }
       },
-      "description": "Reference to another subresource.",
-      "x-ms-azure-resource": true
+      "description": "Reference to another resource."
     },
     "TagsObject": {
       "properties": {
