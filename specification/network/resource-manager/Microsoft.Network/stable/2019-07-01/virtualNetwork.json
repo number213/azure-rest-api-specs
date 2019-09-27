@@ -72,6 +72,12 @@
           },
           "200": {
             "description": "Delete successful."
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-long-running-operation": true,
@@ -124,6 +130,12 @@
             "description": "Request successful. The operation returns the resulting VirtualNetwork resource.",
             "schema": {
               "$ref": "#/definitions/VirtualNetwork"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },
@@ -187,6 +199,12 @@
             "description": "Create successful. The operation returns the resulting VirtualNetwork resource.",
             "schema": {
               "$ref": "#/definitions/VirtualNetwork"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },
@@ -258,6 +276,12 @@
             "schema": {
               "$ref": "#/definitions/VirtualNetwork"
             }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-long-running-operation": true,
@@ -288,6 +312,12 @@
             "description": "Request successful. The operation returns a list of VirtualNetwork resources.",
             "schema": {
               "$ref": "#/definitions/VirtualNetworkListResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },
@@ -328,6 +358,12 @@
             "description": "Request successful. The operation returns a list of VirtualNetwork resources.",
             "schema": {
               "$ref": "#/definitions/VirtualNetworkListResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },
@@ -386,6 +422,12 @@
           },
           "202": {
             "description": "Accepted and the operation will complete asynchronously."
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-examples": {
@@ -445,6 +487,12 @@
             "description": "Request successful. The operation returns the resulting Subnet resource.",
             "schema": {
               "$ref": "#/definitions/Subnet"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },
@@ -513,6 +561,12 @@
             "schema": {
               "$ref": "#/definitions/Subnet"
             }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-long-running-operation": true,
@@ -580,6 +634,12 @@
           },
           "202": {
             "description": "Accepted and the operation will complete asynchronously."
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-long-running-operation": true,
@@ -641,6 +701,12 @@
           },
           "202": {
             "description": "Accepted and the operation will complete asynchronously."
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-long-running-operation": true,
@@ -693,6 +759,12 @@
             "schema": {
               "$ref": "#/definitions/ResourceNavigationLinksListResult"
             }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-examples": {
@@ -741,6 +813,12 @@
             "schema": {
               "$ref": "#/definitions/ServiceAssociationLinksListResult"
             }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-examples": {
@@ -784,6 +862,12 @@
             "description": "Request successful. The operation returns a list of Subnet resources.",
             "schema": {
               "$ref": "#/definitions/SubnetListResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },
@@ -842,6 +926,12 @@
           },
           "202": {
             "description": "Accepted and the operation will complete asynchronously."
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-examples": {
@@ -894,6 +984,12 @@
             "description": "Request successful. The operation returns the resulting VirtualNetworkPeering resource.",
             "schema": {
               "$ref": "#/definitions/VirtualNetworkPeering"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },
@@ -959,6 +1055,12 @@
             "schema": {
               "$ref": "#/definitions/VirtualNetworkPeering"
             }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-examples": {
@@ -1006,6 +1108,12 @@
             "description": "Request successful. The operation returns a list of VirtualNetworkPeering resources.",
             "schema": {
               "$ref": "#/definitions/VirtualNetworkPeeringListResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },
@@ -1058,6 +1166,12 @@
             "schema": {
               "$ref": "#/definitions/IPAddressAvailabilityResult"
             }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
           }
         },
         "x-ms-examples": {
@@ -1098,6 +1212,12 @@
             "description": "Usage stats for vnet.",
             "schema": {
               "$ref": "#/definitions/VirtualNetworkListUsageResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
             }
           }
         },

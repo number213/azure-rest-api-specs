@@ -35,50 +35,15 @@
   },
   "paths": {},
   "definitions": {
-    "ErrorDetails": {
+    "CloudError": {
       "properties": {
-        "code": {
-          "type": "string",
-          "description": "Error code."
-        },
-        "target": {
-          "type": "string",
-          "description": "Error target."
-        },
-        "message": {
-          "type": "string",
-          "description": "Error message."
+        "error": {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse",
+          "description": "The resource management error response."
         }
       },
-      "description": "Common error details representation."
-    },
-    "Error": {
-      "properties": {
-        "code": {
-          "type": "string",
-          "description": "Error code."
-        },
-        "message": {
-          "type": "string",
-          "description": "Error message."
-        },
-        "target": {
-          "type": "string",
-          "description": "Error target."
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ErrorDetails"
-          },
-          "description": "Error details."
-        },
-        "innerError": {
-          "type": "string",
-          "description": "Inner error message."
-        }
-      },
-      "description": "Common error representation."
+      "x-ms-external": true,
+      "description": "An error response for a resource management request."
     },
     "AzureAsyncOperationResult": {
       "properties": {
@@ -96,7 +61,7 @@
           }
         },
         "error": {
-          "$ref": "#/definitions/Error",
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse",
           "description": "Details of the error occurred during specified asynchronous operation."
         }
       },
