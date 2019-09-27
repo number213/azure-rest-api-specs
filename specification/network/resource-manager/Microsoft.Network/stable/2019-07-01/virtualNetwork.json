@@ -1681,7 +1681,7 @@
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/Resource"
+          "$ref": "./network.json#/definitions/TopLevelResource"
         }
       ],
       "description": "Virtual Network resource."
@@ -1854,7 +1854,7 @@
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/Resource"
+          "$ref": "./network.json#/definitions/TopLevelResource"
         }
       ],
       "description": "Network Intent Policy resource."
