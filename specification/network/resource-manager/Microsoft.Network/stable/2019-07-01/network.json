@@ -102,46 +102,49 @@
       },
       "description": "The response body contains the status of the specified asynchronous operation, indicating whether it has succeeded, is in progress, or has failed. Note that this status is distinct from the HTTP status code returned for the Get Operation Status operation itself. If the asynchronous operation succeeded, the response body includes the HTTP status code for the successful request. If the asynchronous operation failed, the response body includes the HTTP status code for the failed request and error information regarding the failure."
     },
-    "Resource": {
+    "ResourceProperties": {
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "Resource ID."
-        },
+        "provisioningState": {
+          "readOnly": true,
+          "$ref": "#/definitions/ProvisioningState",
+          "description": "The provisioning state of the resource."
+        }
+      },
+      "description": ""
+    },
+    "ResourceChild": {
+      "properties": {
         "name": {
+          "type": "string",
+          "description": "The name of the resource"
+        },
+        "id": {
           "readOnly": true,
           "type": "string",
-          "description": "Resource name."
+          "description": "Fully qualified resource Id for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
         },
         "type": {
           "readOnly": true,
           "type": "string",
-          "description": "Resource type."
+          "description": "The type of the resource. Ex- Microsoft.Compute/virtualMachines or Microsoft.Storage/storageAccounts."
         },
-        "location": {
+        "etag": {
           "type": "string",
-          "description": "Resource location."
-        },
-        "tags": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "description": "Resource tags."
+          "readOnly": true,
+          "description": "A unique read-only string that changes whenever the resource is updated."
         }
       },
-      "description": "Common resource representation.",
-      "x-ms-azure-resource": true
+      "x-ms-azure-resource": true,
+      "description": ""
     },
-    "SubResource": {
+    "ResourceId": {
       "properties": {
         "id": {
           "type": "string",
           "description": "Resource ID."
         }
       },
-      "description": "Reference to another subresource.",
-      "x-ms-azure-resource": true
+      "description": "Reference to another resource."
     },
     "TagsObject": {
       "properties": {

@@ -1123,11 +1123,6 @@
           "type": "string",
           "description": "Link to the external resource."
         },
-        "provisioningState": {
-          "readOnly": true,
-          "$ref": "./network.json#/definitions/ProvisioningState",
-          "description": "The provisioning state of the service association link resource."
-        },
         "allowDelete": {
           "type": "boolean",
           "description": "If true, the resource can be deleted."
@@ -1140,6 +1135,11 @@
           "description": "A list of locations."
         }
       },
+      "allOf": [
+        {
+          "$ref": "./network.json#/definitions/ResourceProperties"
+        }
+      ],
       "description": "Properties of ServiceAssociationLink."
     },
     "ServiceAssociationLink": {
@@ -1148,24 +1148,11 @@
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/ServiceAssociationLinkPropertiesFormat",
           "description": "Resource navigation link properties format."
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the resource that is unique within a resource group. This name can be used to access the resource."
-        },
-        "etag": {
-          "readOnly": true,
-          "type": "string",
-          "description": "A unique read-only string that changes whenever the resource is updated."
-        },
-        "type": {
-          "type": "string",
-          "description": "Resource type."
         }
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/SubResource"
+          "$ref": "./network.json#/definitions/ResourceChild"
         }
       ],
       "description": "ServiceAssociationLink resource."
@@ -1179,13 +1166,13 @@
         "link": {
           "type": "string",
           "description": "Link to the external resource."
-        },
-        "provisioningState": {
-          "readOnly": true,
-          "$ref": "./network.json#/definitions/ProvisioningState",
-          "description": "The provisioning state of the resource navigation link resource."
         }
       },
+      "allOf": [
+        {
+          "$ref": "./network.json#/definitions/ResourceProperties"
+        }
+      ],
       "description": "Properties of ResourceNavigationLink."
     },
     "ResourceNavigationLink": {
@@ -1194,30 +1181,11 @@
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/ResourceNavigationLinkFormat",
           "description": "Resource navigation link properties format."
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the resource that is unique within a resource group. This name can be used to access the resource."
-        },
-        "id": {
-          "type": "string",
-          "readOnly": true,
-          "description": "Resource navigation link identifier."
-        },
-        "etag": {
-          "readOnly": true,
-          "type": "string",
-          "description": "A unique read-only string that changes whenever the resource is updated."
-        },
-        "type": {
-          "readOnly": true,
-          "type": "string",
-          "description": "Resource type."
         }
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/SubResource"
+          "$ref": "./network.json#/definitions/ResourceChild"
         }
       ],
       "description": "ResourceNavigationLink resource."
@@ -1234,13 +1202,13 @@
             "type": "string"
           },
           "description": "Describes the actions permitted to the service upon delegation."
-        },
-        "provisioningState": {
-          "readOnly": true,
-          "$ref": "./network.json#/definitions/ProvisioningState",
-          "description": "The provisioning state of the service delegation resource."
         }
       },
+      "allOf": [
+        {
+          "$ref": "./network.json#/definitions/ResourceProperties"
+        }
+      ],
       "description": "Properties of a service delegation."
     },
     "Delegation": {
@@ -1249,19 +1217,11 @@
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/ServiceDelegationPropertiesFormat",
           "description": "Properties of the subnet."
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the resource that is unique within a subnet. This name can be used to access the resource."
-        },
-        "etag": {
-          "type": "string",
-          "description": "A unique read-only string that changes whenever the resource is updated."
         }
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/SubResource"
+          "$ref": "./network.json#/definitions/ResourceChild"
         }
       ],
       "description": "Details the service to which the subnet is delegated."
@@ -1288,7 +1248,7 @@
           "description": "The reference of the RouteTable resource."
         },
         "natGateway": {
-          "$ref": "./network.json#/definitions/SubResource",
+          "$ref": "./network.json#/definitions/ResourceId",
           "description": "Nat gateway associated with this subnet."
         },
         "serviceEndpoints": {
@@ -1355,10 +1315,6 @@
           "readOnly": true,
           "description": "A read-only string identifying the intention of use for this subnet based on delegations and other user-defined properties."
         },
-        "provisioningState": {
-          "$ref": "./network.json#/definitions/ProvisioningState",
-          "description": "The provisioning state of the subnet resource."
-        },
         "privateEndpointNetworkPolicies": {
           "type": "string",
           "description": "Enable or Disable apply network policies on private end point in the subnet."
@@ -1368,6 +1324,11 @@
           "description": "Enable or Disable apply network policies on private link service in the subnet."
         }
       },
+      "allOf": [
+        {
+          "$ref": "./network.json#/definitions/ResourceProperties"
+        }
+      ],
       "description": "Properties of the subnet."
     },
     "ServiceEndpointPropertiesFormat": {
@@ -1382,12 +1343,13 @@
             "type": "string"
           },
           "description": "A list of locations."
-        },
-        "provisioningState": {
-          "$ref": "./network.json#/definitions/ProvisioningState",
-          "description": "The provisioning state of the service endpoint resource."
         }
       },
+      "allOf": [
+        {
+          "$ref": "./network.json#/definitions/ResourceProperties"
+        }
+      ],
       "description": "The service endpoint properties."
     },
     "VirtualNetworkPeeringPropertiesFormat": {
@@ -1409,7 +1371,7 @@
           "description": "If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway."
         },
         "remoteVirtualNetwork": {
-          "$ref": "./network.json#/definitions/SubResource",
+          "$ref": "./network.json#/definitions/ResourceId",
           "description": "The reference of the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)."
         },
         "remoteAddressSpace": {
@@ -1428,12 +1390,13 @@
             "name": "VirtualNetworkPeeringState",
             "modelAsString": true
           }
-        },
-        "provisioningState": {
-          "$ref": "./network.json#/definitions/ProvisioningState",
-          "description": "The provisioning state of the virtual network peering resource."
         }
       },
+      "allOf": [
+        {
+          "$ref": "./network.json#/definitions/ResourceProperties"
+        }
+      ],
       "description": "Properties of the virtual network peering."
     },
     "Subnet": {
@@ -1442,19 +1405,11 @@
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/SubnetPropertiesFormat",
           "description": "Properties of the subnet."
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource."
-        },
-        "etag": {
-          "type": "string",
-          "description": "A unique read-only string that changes whenever the resource is updated."
         }
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/SubResource"
+          "$ref": "./network.json#/definitions/ResourceChild"
         }
       ],
       "description": "Subnet in a virtual network resource."
@@ -1465,19 +1420,11 @@
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/VirtualNetworkPeeringPropertiesFormat",
           "description": "Properties of the virtual network peering."
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource."
-        },
-        "etag": {
-          "type": "string",
-          "description": "A unique read-only string that changes whenever the resource is updated."
         }
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/SubResource"
+          "$ref": "./network.json#/definitions/ResourceChild"
         }
       ],
       "description": "Peerings in a virtual network resource."
@@ -1576,10 +1523,6 @@
           "type": "string",
           "description": "The resourceGuid property of the Virtual Network resource."
         },
-        "provisioningState": {
-          "$ref": "./network.json#/definitions/ProvisioningState",
-          "description": "The provisioning state of the virtual network resource."
-        },
         "enableDdosProtection": {
           "type": "boolean",
           "default": false,
@@ -1591,11 +1534,16 @@
           "description": "Indicates if VM protection is enabled for all the subnets in the virtual network."
         },
         "ddosProtectionPlan": {
-          "$ref": "./network.json#/definitions/SubResource",
+          "$ref": "./network.json#/definitions/ResourceId",
           "default": null,
           "description": "The DDoS protection plan associated with the virtual network."
         }
       },
+      "allOf": [
+        {
+          "$ref": "./network.json#/definitions/ResourceProperties"
+        }
+      ],
       "description": "Properties of the virtual network."
     },
     "VirtualNetwork": {
@@ -1612,7 +1560,7 @@
       },
       "allOf": [
         {
-          "$ref": "./network.json#/definitions/Resource"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
         }
       ],
       "description": "Virtual Network resource."
